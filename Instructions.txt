@@ -1,0 +1,72 @@
+Procedure to use the py documents
+
+Get Signal Data and Dust impact signal data
+
+1. ReadCDF.py 
+
+| Read the CDF original LPW data in 'Data' folder
+		ReadCDF 1 & 2 is the same, can parallel process
+
+2. DustSignalCheck.py  
+
+|  Usethe model to check the signals, give a probability 
+	here use the version 5 model
+
+3. DustSignalSetSave.py 
+
+|  Save the dust signals, whose probability over threshold
+ 
+
+3.1 DustSignalDraw.py <<Optional>>
+
+|  Draw the dust signals 
+
+Now you got Dust impact Signal data set!
+
+
+Add Position data
+
+4.  MAVEN_Insitu.py 
+
+| Match the position to Dust Signal Time 
+
+Insitu_Data_df.columns = ['LocalTime','GEO_Latitude','GEO_Longitude','MSO_X','MSO_Y','MSO_Z']
+
+5.  Dust_MSO_spatialDraw3D.py
+
+| Draw 3D scatter spatial distribution
+
+6.  SpatialDistribution.py
+
+| Make the SpatialDistribution Data set
+  MAVEN position match to All signals 
+  Get Local time Duration, Latitude-Longitude Duration
+
+To 3 file folders:
+MAVEN_Latitude_Longitude_Duration_Distribustion
+MAVEN_LocalTime_Duration_Distribution
+MAVEN_MSO_Duration_Distribution
+
+7. SpatialDistributionDraw.py
+
+| Use the step 6 data set to Draw 
+
+LocalTime
+Height
+Latitude
+
+Now you got all the figures you want!
+
+(Other documents)
+
+8. Some test py documents 
+
+MakeCDF.py
+ReadCSV
+
+9. Model5_adjust.py
+
+| Use the dust signal data you adjust to train the model 5 
+but I didn't got a better model, so I give up this.
+
+
